@@ -272,7 +272,7 @@ class ContractPlatform:
 
                 # Make API call
                 response = client.chat.completions.create(
-                    model="gpt-4",
+                    model="gpt-4o-mini",
                     messages=[
                         {"role": "system", "content": "You are a legal document generator specializing in commercial contracts."},
                         {"role": "user", "content": prompt}
