@@ -111,7 +111,7 @@ class ContractPlatform:
         # Add back button
         if st.button("← Back to Home", key="back_upload"):
             st.session_state.step = 'home'
-            st.rerun()
+            st.experimental_rerun()
 
         uploaded_file = st.file_uploader(
             "Choose a file (PDF, DOCX, or TXT)",
@@ -138,7 +138,7 @@ class ContractPlatform:
                     
                     if st.button("Continue to Application Form"):
                         st.session_state.step = 'form'
-                        st.rerun()
+                        st.experimental_rerun()
 
     def application_form(self):
         """Render application form."""
@@ -147,7 +147,7 @@ class ContractPlatform:
         # Add back button
         if st.button("← Back to Home", key="back_form"):
             st.session_state.step = 'home'
-            st.rerun()
+            st.experimental_rerun()
 
         # Form validation
         form_valid = True
@@ -239,7 +239,7 @@ class ContractPlatform:
                 if form_valid:
                     st.session_state.contract_data.update(form_data)
                     st.session_state.step = 'generate'
-                    st.rerun()
+                    st.experimental_rerun()
 
     def generate_contract(self):
         """Generate contract using OpenAI API."""
@@ -248,7 +248,7 @@ class ContractPlatform:
         # Add back button
         if st.button("← Back to Form", key="back_generate"):
             st.session_state.step = 'form'
-            st.rerun()
+            st.experimental_rerun()
 
         try:
             with st.spinner("Generating contract..."):
