@@ -4,7 +4,7 @@ import json
 import io
 from docx import Document
 from PyPDF2 import PdfReader
-from openai import OpenAI
+import openai
 from dotenv import load_dotenv
 from typing import Optional, Dict, Any
 import logging
